@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="color : white;">MAMA</ion-title>
+    <ion-buttons slot="end" color="light" size="large">
+      <ion-icon style="color : white;" color="light" size="large" name="log-out"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div *ngFor="let ava of resp">
+    <ion-card class="welcome-card">
+      <ion-card-content>
+        <ion-grid>
+          <h4 style="color: grey;"> Data: {{ ava.diaava }}/{{ ava.mesava }}/{{ ava.anoava }} </h4>
+          <h4 style="color: grey;"> Resultado : {{ ava.resultado }} </h4>
+          <h4 style="color: grey;"> Recomendação : {{ ava.recomendacao }} </h4>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

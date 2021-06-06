@@ -1,0 +1,40 @@
+ <ion-header [translucent]="true">
+     <ion-toolbar color="primary">
+         <ion-buttons slot="start">
+             <ion-menu-button></ion-menu-button>
+         </ion-buttons>
+         <ion-title chass="Header">Dicas e Cuidados</ion-title>
+         <ion-buttons (click)="Deslogar()" slot="end" color="light" size="large">
+             <ion-icon chass="Header" color="light" size="large" name="log-out"></ion-icon>
+         </ion-buttons>
+     </ion-toolbar>
+ </ion-header>
+
+ <ion-content [fullscreen]="true">
+     <ion-header collapse="condense">
+         <ion-toolbar color="primary">
+             <ion-title style="color : white;" size="large"> Dicas e Cuidados </ion-title>
+             <ion-buttons (click)="Deslogar()" slot="end" color="light" size="large">
+                 <ion-icon style="color : white;" color="light" size="large" name="log-out"></ion-icon>
+             </ion-buttons>
+         </ion-toolbar>
+     </ion-header>
+
+     <ion-content>
+         <ion-button ion-button color="primary" type="submit" outline>
+
+             Últimas novidades
+
+         </ion-button>
+         <ion-card *ngFor=" let article of articles">
+             <a [href]="article.url">
+                 <ion-img [src]="article.urlToImage"></ion-img>
+                 <ion-card-header>
+                     <ion-card-subtitle>{{article.publishedAt | date}}</ion-card-subtitle>
+                     <ion-card-title>{{article.title}}</ion-card-title>
+                 </ion-card-header>
+                 <ion-card-content>{{article.description}}</ion-card-content>
+
+             </a>
+         </ion-card>
+     </ion-content>
